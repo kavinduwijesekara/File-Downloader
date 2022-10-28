@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: rgb(8, 6, 67);
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index: -1;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(115s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+
+}
+.con_glass{
+    width: 550px;
+    height: 500px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-background-filter:  blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px 25px 15px;
+}
+header h1{
+    font-size: 60px;
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top: 30px;
+    color: #fff;
+}
+header p{
+    font-size: 23px;
+    font-weight: 500;
+    margin-top: 30px;
+    color: #fff;
+    font-family: sans-serif;
+    margin-left: 18px;
+}
+form{
+    margin: 20px 0 27px;
+}
+form input{
+    width: 100%;
+    height: 60px;
+    margin-top: 35px;
+    outline: none;
+    border: 1.5px solid #979393;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 19px;
+    padding: 0 17px;
+}
+form button{
+    opacity: 0.7;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 30px;
+    border-radius: 5px;
+    background: #1b4ca1;
+    cursor: pointer;
+    font-size: 27px;
+    pointer-events: none;
+}
+form input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+}
+label p{
+    font-size: 20px;
+    margin-left: 68px;
+    margin-top: 55px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
